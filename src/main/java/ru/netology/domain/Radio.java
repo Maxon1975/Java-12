@@ -1,7 +1,7 @@
- package ru.netology.domain;
+package ru.netology.domain;
 
 public class Radio {
-    private String name = "Radioman";
+    private String name = "Radioman2";
 
 
     private int currentVolume;
@@ -10,7 +10,7 @@ public class Radio {
 
     private int currentRadioStation = 5;
     private int maxRadioStation = 9;
-    private int numberOfRadioStations = calculateNumberOfRadioStations();
+    private int numberOfRadioStations = 10;
     private int minRadioStation = 0;
 
 
@@ -21,8 +21,18 @@ public class Radio {
     public Radio() {
     }
 
-    public int calculateNumberOfRadioStations() {
-        return maxRadioStation + 1;
+
+    public void setStations(int currentRadioStation) {
+
+        if (currentRadioStation >= numberOfRadioStations) {
+            return;
+        }
+        if (currentRadioStation < 0) {
+            return;
+        }
+        this.currentRadioStation = currentRadioStation;
+
+
     }
 
     public void selectingTheWrongRadioStationNumber() {
@@ -113,3 +123,4 @@ public class Radio {
         return numberOfRadioStations;
     }
 }
+ 
